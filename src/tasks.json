@@ -1,0 +1,38 @@
+[
+  {
+    "start": "2020-03-01",
+    "end": "2020-03-05",
+    "name": "Idea",
+    "id": "Task1",
+    "type": "task",
+    "progress": 45,
+    "isDisabled": true
+  },
+  {
+    "start": "2020-03-02",
+    "end": "2020-03-10",
+    "name": "Test",
+    "id": "Task2",
+    "type": "task",
+    "progress": 45,
+    "isDisabled": true
+  },
+  {
+    "start": "2020-03-10",
+    "end": "2020-03-17",
+    "name": "Development",
+    "id": "Task3",
+    "type": "task",
+    "progress": 45,
+    "isDisabled": true
+  },
+  {
+    "start": "2020-03-17",
+    "end": "2020-04-02",
+    "name": "Deployment",
+    "id": "Task4",
+    "type": "task",
+    "progress": 45,
+    "isDisabled": true
+  }
+]
