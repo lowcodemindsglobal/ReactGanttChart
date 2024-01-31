@@ -50,9 +50,10 @@ npm run build
 }
 ```
 
-### Input Format
+### Gantt Chart without Dependencies
 ```
-{
+a!localVariables(
+  local!tasks:{
     {
       "start": "2020-03-01",
       "end": "2020-03-05",
@@ -89,9 +90,83 @@ npm run build
         "progress": 45,
         "isDisabled": true    
     }
-}
+},
+  {
+  ganttChart(
+    label: "Gantt Chart",
+    labelPosition: "ABOVE",
+    validations: {},
+    height: "AUTO",
+    tasks: local!tasks
+  )
+})
 
 ```
+![alt text](images/sample%202.png "Gantt chart without Dependencies")
+### Sample Gantt chart with Dependencies
+```
+
+a!localVariables(
+  local!tasks: {
+    {
+      "start": "2020-03-01",
+      "name": "Kick Start",
+      "id": "Task1",
+      "type": "milestone",
+      "progress": 10,
+      "isDisabled": true    
+    },
+    {
+      "start": "2020-03-02",
+      "end": "2020-03-04",
+      "name": "Requirement",
+      "id": "Task2",
+      "type": "task",
+      "progress": 10,
+      "isDisabled": true,
+      "dependencies": {"Task1"}
+    },
+    {
+      "start": "2020-03-04",
+      "end": "2020-03-06",
+      "name": "Development",
+      "id": "Task3",
+      "type": "project",
+      "progress": 25,
+      "isDisabled": true,
+      "dependencies": {"Task2"}
+    },
+    {
+      "start": "2020-03-06",
+      "end": "2020-03-08",
+      "name": "Deployment",
+      "id": "Task4",
+      "type": "task",
+      "progress": 0,
+      "isDisabled": true  ,
+      "dependencies": {"Task3"}
+    },
+    {
+      "start": "2020-03-09",
+      "name": "Final Demo",
+      "id": "Task5",
+      "type": "milestone",
+      "progress": 10,
+      "isDisabled": true  ,
+      "dependencies": {"Task4"}
+    }
+  },
+  {
+  ganttChart(
+    label: "Gantt Chart",
+    labelPosition: "ABOVE",
+    validations: {},
+    height: "AUTO",
+    tasks: local!tasks
+  )
+})
+```
+![alt text](images/sample%201.png "Gantt chart with Dependencies")
 ### Verify Used Dependencies
 ```
 npx depcheck

@@ -12,8 +12,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "serve public",
-    "build": "esbuild src/index.js --bundle --outfile=public/ganttChart.js --loader:.js=jsx --format=cjs",
+    "start": "react-scripts start",
+    "build": "esbuild ./src/index.jsx --bundle --outfile=public/ganttChart.js --loader:.js=jsx --format=cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,8 +36,11 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
     "esbuild": "^0.19.11",
     "eslint-config-react-app": "^7.0.1",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "typescript": "^5.3.3"
   }
 }
