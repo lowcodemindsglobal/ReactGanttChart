@@ -6,6 +6,9 @@ GantChart is an appian component plugin which supports the various features need
 npm install
 npm start
 ```
+- for ssl problem set strict-ssl false
+  `npm config set strict-ssl false`
+  
 
 ### Build
 - build with esbuild
